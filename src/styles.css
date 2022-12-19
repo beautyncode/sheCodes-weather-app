@@ -25,6 +25,10 @@ li {
   line-height: 19px;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
@@ -51,4 +55,19 @@ li {
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
