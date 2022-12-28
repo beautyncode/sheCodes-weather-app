@@ -1,5 +1,6 @@
 body {
   font-family: arial, sans-serif;
+  background-image: url(./images/backimg.jpg);
 }
 
 h1 {
@@ -30,6 +31,12 @@ button {
   margin-bottom: 0;
 }
 
+small a {
+  color: rgb(176, 105, 116);
+  display: inline;
+  margin-left: 200px;
+}
+
 li:first-letter {
   text-transform: capitalize;
 }
@@ -40,6 +47,7 @@ li:first-letter {
 }
 
 .weather-app {
+  background: rgba(240, 248, 255, 0.7);
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
