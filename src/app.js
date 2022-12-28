@@ -115,7 +115,6 @@ function displayFahrenheitTemperature(event) {
   );
 }
 function getPosition(position) {
-  console.log(position);
   let apiKey = "dcbe9afdd9023a013ceaof19ted4923f";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
