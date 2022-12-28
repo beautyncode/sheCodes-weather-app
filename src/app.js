@@ -65,7 +65,6 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = "dcbe9afdd9023a013ceaof19ted4923f";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -115,11 +114,24 @@ function displayFahrenheitTemperature(event) {
     (celsiusTemperature * 9) / 5 + 32
   );
 }
+function getPosition(position) {
+  console.log(position);
+  let apiKey = "dcbe9afdd9023a013ceaof19ted4923f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function currentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let button = document.querySelector("button");
+button.addEventListener("click", currentLocation);
 
 search("New York");
